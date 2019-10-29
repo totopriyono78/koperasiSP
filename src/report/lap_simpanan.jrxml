@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="lap_simpanan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="228f6fb4-b56a-4cdf-b7c8-401ed16282be">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="koperasi"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="c2ltcGFuYW4gLDE1LDE1LDc4MzViMWYwLTIxYTQtNDlhNy04ZjNmLTM3ZDRhYjhiOTgyMTs="/>
+	<queryString>
+		<![CDATA[SELECT simpanan.`tgl_simpanan`,a.`nomor_anggota`, a.`nama_anggota`, s.`nama_jenis_simpanan`, simpanan.`nilai_simpanan`, petugas.`nama_petugas` 
+FROM simpanan JOIN anggota AS a ON simpanan.`id_anggota`=a.`id_anggota` 
+JOIN jenis_simpanan AS s ON simpanan.`jenis_simpanan`=s.`id_jenis_simpanan` 
+JOIN petugas ON simpanan.`id_petugas`=petugas.`id_petugas` WHERE s.`id_jenis_simpanan`=3 ORDER BY simpanan.`tgl_simpanan` ASC]]>
+	</queryString>
+	<field name="tgl_simpanan" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="tgl_simpanan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="simpanan"/>
+	</field>
+	<field name="nomor_anggota" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nomor_anggota"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="anggota"/>
+	</field>
+	<field name="nama_anggota" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nama_anggota"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="anggota"/>
+	</field>
+	<field name="nama_jenis_simpanan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nama_jenis_simpanan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="jenis_simpanan"/>
+	</field>
+	<field name="nilai_simpanan" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="nilai_simpanan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="simpanan"/>
+	</field>
+	<field name="nama_petugas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nama_petugas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="petugas"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement key="" x="140" y="0" width="430" height="40" uuid="efef3a9e-9138-4870-9b29-cfea4353cdda">
+					<property name="com.jaspersoft.studio.element.name" value="Laporan"/>
+				</reportElement>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Koperasi Simpan Pinjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="33" width="380" height="30" uuid="31c26666-07f9-4b66-a680-52580104b8b8"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Selomartani Kalasan RT 04 RW 02 , Tlp. 08112502883]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="0" width="100" height="84" uuid="6bcf88d5-ef78-4f91-a0c7-bc4efc776e1b"/>
+				<imageExpression><![CDATA["/src/Images/logo koperasi.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="140" y="-6" width="280" height="30" uuid="86ec6129-d9fb-47ae-95cf-7c28289aab31"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Laporan Simpanan Anggota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="213" y="20" width="135" height="30" uuid="2b8cf522-30f0-40a0-8b81-df715e72419a"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Simpanan Wajib]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" backcolor="#7979F2" uuid="3137a174-fed8-405c-ad8e-1fd308d4fe4a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d53f4afc-543f-410f-b199-a95a53eaf8e9"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tgl Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="0" width="100" height="30" backcolor="#7979F2" uuid="dee22c5f-ba24-4af6-ab6c-69bdd6b4acf9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0704c9e5-9aed-46d6-b85e-8fa4d4f61337"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nomor Anggota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="211" y="0" width="100" height="30" backcolor="#7979F2" uuid="585280e5-bf12-4f75-ac1a-33b9e160f102">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="976d1969-ae3d-4757-b967-1967ecfbbf74"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="0" width="100" height="30" backcolor="#7979F2" uuid="1cd0ec4f-760c-40cc-a698-a7965caf6583">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a66c8a2e-61e1-4ee7-b222-fe3b8c13f656"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="0" width="100" height="30" backcolor="#7979F2" uuid="92bd4489-8033-4aa3-a181-47621e737047">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5030d4ba-d5fa-426e-8a11-c8d470a411f5"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Petugas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="94" height="30" uuid="7df653c1-9eeb-4d7b-bc5c-b3871e24c3f6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d53f4afc-543f-410f-b199-a95a53eaf8e9"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tgl_simpanan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="83" height="30" uuid="ef860cfd-fc25-4fcd-a97b-35e5abe196e3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0704c9e5-9aed-46d6-b85e-8fa4d4f61337"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nomor_anggota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="0" width="100" height="30" uuid="e12e14d8-570e-4bc5-b336-bfc7754c173e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="976d1969-ae3d-4757-b967-1967ecfbbf74"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nama_anggota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="0" width="100" height="30" uuid="9856d142-a527-4879-bc05-239783414f4e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a66c8a2e-61e1-4ee7-b222-fe3b8c13f656"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nilai_simpanan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="471" y="0" width="78" height="30" uuid="6d830396-2f85-409b-9677-eca9401be803">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5030d4ba-d5fa-426e-8a11-c8d470a411f5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nama_petugas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
